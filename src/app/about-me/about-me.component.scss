@@ -1,0 +1,9 @@
+.markdown-section {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+:host /deep/ a {
+	font-weight: 600
+}

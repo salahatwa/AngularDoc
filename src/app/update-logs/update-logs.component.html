@@ -1,0 +1,6 @@
+<div class="update-panel">
+  <mat-progress-bar *ngIf="isOnLoading" mode="indeterminate"></mat-progress-bar>
+  <div *ngFor="let commit of commits">
+    <app-commit-content [commit]="commit"></app-commit-content>
+  </div>
+</div>

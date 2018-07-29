@@ -1,0 +1,20 @@
+<mat-card>
+     <mat-card-header>
+       <mat-card-title>
+         <h1>{{title}}</h1>
+       </mat-card-title>
+     </mat-card-header>
+  
+     <mat-card-content class="issue-editor-container">
+       <mat-form-field>
+         <input matInput placeholder="Title" [(ngModel)]="issue.title">
+       </mat-form-field>
+       <mat-form-field>
+         <textarea matInput placeholder="Content" [(ngModel)]="issue.body"></textarea>
+       </mat-form-field>
+     </mat-card-content>
+     <mat-card-actions>
+       <span class="spacer"></span>
+       <button mat-raised-button color="primary" (click)="saveIssue()">Save</button>
+     </mat-card-actions>
+  </mat-card>

@@ -1,0 +1,28 @@
+<mat-list>
+  <h3 mat-subheader>comment</h3>
+
+    <!-- <div mat-list-icon [ngStyle]="headerImageStyle(comment.user.avatar_url)"></div>
+    <h4 mat-line>{{comment.user.name}}<span class="comment-date">{{comment.created_at | date:"yyyy-MM-dd"}}</span></h4>
+    <div mat-line [innerHTML]="marked(comment.body)"></div> -->
+    <mat-card class="comment-panel" *ngFor="let comment of comments">
+      <mat-card-header>
+        <div mat-card-avatar [ngStyle]="headerImageStyle(comment.user.avatar_url)"></div>
+        <mat-card-title>{{comment.user.name}}</mat-card-title>
+        <mat-card-subtitle>{{comment.created_at | date:"yyyy-MM-dd"}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content [innerHTML]="marked(comment.body)">
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="comment-panel" *ngIf="isLoged()">
+      <mat-card-header>
+        <div mat-card-avatar [ngStyle]="headerImageStyle(user.avatar_url)"></div>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <textarea matInput placeholder="Leave a comment"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+
+</mat-list>

@@ -1,0 +1,22 @@
+#initializr-panel {
+  padding-top: calc(56px + 1em);
+  width: 80%;
+  margin: 0 auto;
+}
+
+mat-horizontal-stepper {
+  padding: 1em 2em;
+}
+
+button {
+  float: right;
+  margin-left: 1em;
+}
+
+.table-panel {
+  margin-bottom: 15px;
+}
+
+.error-info {
+  color: red;
+}

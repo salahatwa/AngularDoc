@@ -1,0 +1,60 @@
+<div id="initializr-panel">
+    <h2>Initiator</h2>
+    <mat-horizontal-stepper [linear]="true">
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel> belongs to </ng-template>
+          <mat-form-field>
+            <input matInput placeholder="owner" formControlName="firstCtrl" [(ngModel)]="owner" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>project</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="project name" formControlName="secondCtrl" [(ngModel)]="repo" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Previous</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Confirm</ng-template>
+        <p>Make sure you have access to the project "{{owner}}/{{repo}}" and that the project has a "{{branch}}" branch! </p>
+        <div>
+          <button mat-raised-button color="primary" (click)="installYkDoc()">Start</button>
+          <button mat-button matStepperPrevious>Previous</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+    <mat-progress-bar color="primary" mode="determinate" [value]="progress">
+    </mat-progress-bar>
+    <p>{{message}}</p>
+    <a *ngIf="link" href="{{{}}" target="_blank">{{link}}</a>
+  
+    <div *ngIf="hasError()" class="table-panel">
+      <h2>Error log:</h2>
+      <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="path">
+          <mat-header-cell *matHeaderCellDef> path </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.path}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="size">
+          <mat-header-cell *matHeaderCellDef> Size </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.size}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="state">
+          <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="error-info"> {{row.state}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<mat-card id="login-div">
+  <mat-card id="login-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <mat-icon color="accent">account_circle</mat-icon>
+      </div>
+      <mat-card-title>Hello there!</mat-card-title>
+      <mat-card-subtitle>please sign in……
+        <a href="https://gitee.com/yorkecao/yorkecao/wikis/%E7%99%BB%E5%BD%95%E6%89%8B%E5%86%8C" target="_blank"><mat-icon class="help-icon">help</mat-icon></a>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="login-input">
+        <div class="login-content">
+          <a class="at-like" href="https://gitee.com/api/v5/swagger" target="_blank">Obtain Access Token</a>
+        </div>
+        <p>
+          <mat-input-container class="login-content">
+            <input [(ngModel)]="accessToken" matInput placeholder="Access Token" type="password">
+          </mat-input-container>
+        </p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <span>
+        <mat-checkbox [(ngModel)]="isStar">Star YK-DOC</mat-checkbox>
+      </span>
+      <button id="login" mat-raised-button (click)="login()">
+        <div id="login-text">login</div>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</mat-card>

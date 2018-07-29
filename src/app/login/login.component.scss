@@ -1,0 +1,59 @@
+#login-div {
+  height: 55vh;
+}
+
+#login-card {
+  width: 400px;
+  min-width: 27vw;
+  max-width: 80vw;
+  height: 290px;
+  margin: 0 auto;
+  bottom: -1vh;
+  position: relative;
+  top: 23vh;
+}
+
+mat-icon {
+  height: 100%;
+  width: 100%;
+  font-size: 40px;
+}
+
+.login-content {
+  display: block;
+  width: 87% !important;
+  padding-top: 1vh;
+  margin: 0 auto;
+}
+
+mat-checkbox {
+  float: right;
+}
+
+span {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#login {
+  display: block;
+  color: #000000;
+  width: 80%;
+  margin: 50px auto 0 auto;
+}
+
+.login-input {
+  margin-top: 10px !important;
+}
+
+#login-text {
+  letter-spacing: 16px;
+  text-align: center;
+  padding-left: 8px;
+}
+
+.help-icon {
+  font-size: 20px;
+  display: inline;
+}

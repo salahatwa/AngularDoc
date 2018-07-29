@@ -1,0 +1,29 @@
+  <div>
+    <h2 class="mat-dialog-title">New document</h2>
+    <mat-dialog-content>
+      <form>
+        <mat-form-field>
+          <input matInput placeholder="folder" aria-label="Dir" [matAutocomplete]="auto" [formControl]="dirCtrl" [(ngModel)]="data.dir" name="dirName">
+          <mat-error *ngIf="dirCtrl.hasError('required')">
+            Folder <strong>Required</strong>
+          </mat-error>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let dir of filteredDirs | async" [value]="dir.name">
+              <span>{{ dir.name }}</span>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="data.file" placeholder="filename" name="fileName" [formControl]="fileCtrl">
+          <mat-error *ngIf="fileCtrl.hasError('required')">
+            File name <strong>Required</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button id="doalog-btn" mat-raised-button [mat-dialog-close]="data" color="primary" [disabled]="hasError()">OK</button>
+    </mat-dialog-actions>
+  </div>
+  

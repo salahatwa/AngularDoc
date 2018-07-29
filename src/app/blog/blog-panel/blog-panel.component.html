@@ -1,0 +1,26 @@
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="{{getSideNavMode()}}" opened="{{isDefaultOpen()}}">
+      <button class="side-btn" mat-mini-fab (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-list>
+        <h3 mat-subheader>Document list<mat-icon *ngIf="authService.isAdmin" id="add-btn" color="accent" (click)="close(); openAddBlogDialog()">add_circle</mat-icon></h3>
+        <div *ngFor="let dir of dirs">
+          <mat-expansion-panel [expanded]="isMarkedDir(dir.name)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon class="dirIcon" mat-line color="primary">folder</mat-icon>
+                {{dir.name}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-folder #files [dir]="dir.name" [sidenav]="sidenav" (onDeleted)="onDeleted($event)"></app-folder>
+          </mat-expansion-panel>
+        </div>
+      </mat-list>
+    </mat-sidenav>
+    <button class="content-btn" mat-mini-fab (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>
+  

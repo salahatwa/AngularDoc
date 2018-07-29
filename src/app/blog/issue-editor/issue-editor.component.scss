@@ -1,0 +1,34 @@
+.issue-editor-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.issue-editor-container > * {
+  width: 100%;
+}
+
+mat-card {
+  width: 80%;
+  margin: 1em auto;
+}
+
+mat-card-actions {
+  display: flex;
+}
+
+textarea {
+  resize: none;
+  display: block;
+  overflow-x: hidden !important;
+  word-wrap: break-word;
+  overflow-y: visible !important;
+  height: calc(100vh - 355px);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  margin-right: 16px !important;
+}

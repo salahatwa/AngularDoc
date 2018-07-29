@@ -1,0 +1,50 @@
+<div [class.unicorn-dark-theme]="isDark">
+  <mat-toolbar color="primary">
+    <button mat-button routerLink="/" routerLinkActive="active">
+      <mat-icon color="accent">book</mat-icon>
+      <span>{{title}}</span>
+    </button>
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before" [overlapTrigger]="false">
+      <button *ngIf="!authService.isLoggedIn" mat-menu-item routerLink="/login" routerLinkActive="active">
+        <mat-icon color="accent">account_circle</mat-icon>
+        <span>login</span>
+      </button>
+      <button *ngIf="authService.isLoggedIn" mat-menu-item (click)="logout()">
+        <mat-icon color="accent">exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+      <button *ngIf="ifYkdoc()" mat-menu-item routerLink="/initializr" routerLinkActive="active">
+        <mat-icon color="accent">power_settings_new</mat-icon>
+        <span>Initializer</span>
+      </button>
+      <button *ngIf="authService.isAdmin" mat-menu-item routerLink="/issue/" routerLinkActive="active">
+        <mat-icon color="accent">send</mat-icon>
+        <span>Release dynamics</span>
+      </button>
+      <button *ngIf="authService.isAdmin" mat-menu-item routerLink="/README.md" routerLinkActive="active">
+        <mat-icon color="accent">border_color</mat-icon>
+        <span>Update about</span>
+      </button>
+      <button mat-menu-item routerLink="/updates" routerLinkActive="active">
+        <mat-icon color="accent">update</mat-icon>
+        <span>Operation record</span>
+      </button>
+      <button mat-menu-item>
+        <mat-checkbox [(ngModel)]="isDark" (click)="toggleTheme()">Night mode</mat-checkbox>
+      </button>
+      <button mat-menu-item (click)="openDialog()">
+        <mat-icon color="accent">info</mat-icon>
+        <span>on</span>
+      </button>
+    </mat-menu>
+    <a *ngIf="ifYkdoc()" class="gitee" href="https://gitee.com/yorkecao/yorkecao">
+      <img class="gitee-logo" height="20" src="https://gitee.com/yorkecao/yorkecao/raw/yk-doc-pages/assets/images/gitee-logo.svg">
+    </a>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>
+

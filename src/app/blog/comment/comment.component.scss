@@ -1,0 +1,18 @@
+.comment-date {
+  margin-left: 1em;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.8em;
+}
+
+.comment-panel {
+  margin-bottom: 1em;
+}
+
+textarea {
+  resize: none;
+  display: block;
+  overflow-x: hidden !important;
+  word-wrap: break-word;
+  overflow-y: visible !important;
+  height: calc(100vh - 355px);
+}

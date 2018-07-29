@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar [ngStyle]="headerImageStyle"></div>
+    <mat-card-title>{{name}}</mat-card-title>
+    <mat-card-subtitle>{{date | date:"yyyy-MM-dd"}}</mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img mat-card-image src="" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content [innerHTML]="message">
+  </mat-card-content>
+</mat-card>
