@@ -3,7 +3,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { GitProxyService } from './git-proxy.service';
 import { Config } from './config';
 
-export const branch = 'myCustomBranch';
+export const branch = 'master';
 
 @Injectable()
 export class ConfService {

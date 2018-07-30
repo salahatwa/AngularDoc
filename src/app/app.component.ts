@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.confService.initConfig();
     // this.title = this.confService.config.repo;
-    this.title = 'YK-DOC';
+    this.title = 'Salah atwa';
     this.isDark = false;
     let accessToken = sessionStorage.getItem('access_token');
     if (accessToken) {
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
 
   logout(): void {
     this.authService.logout();
-    this.snackBar.open("已注销", "", {
+    this.snackBar.open("Logged out", "", {
       duration: 600,
     });
   }

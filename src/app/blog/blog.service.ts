@@ -54,7 +54,7 @@ export class BlogService {
         this.confService.config.branch);
   }
 
-  // 创建文档
+  // Create document
   createFile(dir: string, file: string, labels?: string[]): Promise<any> {
     return this.gitProxyService
       .createIssue(
@@ -72,7 +72,7 @@ export class BlogService {
             this.confService.config.repo,
             '/' + 'docs/' + issue.number,
             this.utilsService.b64EncodeUnicode('# ' + file),
-            ':memo: 创建了《' + file + '》',
+            ':memo: created《' + file + '》',
             sessionStorage.getItem('access_token'),
             this.confService.config.branch
           )

@@ -89,7 +89,7 @@ export class BlogPanelComponent implements OnInit {
           this.markedDir = dir;
           this.dirs = dirs;
           this.router.navigate(['docs', newFile.content.name]);
-          this.snackBar.open("创建成功！", "", {
+          this.snackBar.open("Created successfully!", "", {
             duration: 600
           });
         })
@@ -111,7 +111,7 @@ export class BlogPanelComponent implements OnInit {
         .then(dirs => {
           this.dirs = dirs;
           this.router.navigate(['']);
-          this.snackBar.open("删除成功！", "", {
+          this.snackBar.open("successfully deleted!", "", {
             duration: 600
           });
         })
