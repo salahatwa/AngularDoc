@@ -12,7 +12,7 @@ YK-DOC is an online document system written in Angular based on the Code Cloud P
 
 Click on the link to preview: YK-DOC Homepage
 
-点击链接预览：[YK-DOC 主页](https://yorkecao.gitee.io/)
+Click on the link preview:[YK-DOC 主页](https://yorkecao.gitee.io/)
 
 ![桌面预览](https://gitee.com/uploads/images/2017/1109/173304_66e48dcd_585591.png "桌面预览.png")
 

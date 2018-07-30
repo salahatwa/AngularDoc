@@ -3,7 +3,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { GitProxyService } from './git-proxy.service';
 import { Config } from './config';
 
-export const branch = 'yk-doc-pages';
+export const branch = 'myCustomBranch';
 
 @Injectable()
 export class ConfService {
@@ -25,6 +25,10 @@ export class ConfService {
       }
     }
     this.config.branch = branch;
+    this.config.owner="salahatwa";
+    this.config.repo="JavaDocs";
+
+    console.log('>>>>>>>>>>>>>>'+this.config.owner+";;;;;"+this.config.repo+"*******"+this.config.branch);
     this.gitProxyService
       .getRepo(
         this.config.owner,

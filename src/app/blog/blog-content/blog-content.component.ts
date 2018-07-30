@@ -60,7 +60,7 @@ export class BlogContentComponent implements OnInit {
           this.mark(this.code);
           this.isOnLoading = false;
         } else if (notification.error) {
-          this.code = "加载出错！";
+          this.code = "Loading error!";
           this.codeBackup = this.code;
           this.mark(this.code);
           this.isOnLoading = false;

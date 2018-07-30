@@ -13,7 +13,7 @@ import { GitProxyService } from '../../git-proxy.service';
 })
 export class IssueEditorComponent implements OnInit {
   accessToken: string;
-  title = '新增动态';
+  title = 'Add new';
   isNew = true;
   issue = {
     number: '',
@@ -33,7 +33,7 @@ export class IssueEditorComponent implements OnInit {
     this.route.params
       .subscribe((params: ParamMap) => {
         if (params['number']) {
-          this.title = '编辑动态';
+          this.title = 'Editing dynamics';
           this.gitProxyService
             .getIssue(
               this.confService.config.owner,
@@ -66,7 +66,7 @@ export class IssueEditorComponent implements OnInit {
           this.accessToken
         )
         .then(() => {
-          this.snackBar.open("创建成功！", "", {
+          this.snackBar.open("Created successfully!", "", {
             duration: 600
           });
           this.location.back();
@@ -83,7 +83,7 @@ export class IssueEditorComponent implements OnInit {
           this.issue.body
         )
         .then(() => {
-          this.snackBar.open("更新成功！", "", {
+          this.snackBar.open("update completed!", "", {
             duration: 600
           });
           this.location.back();
